@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <div className="Header">
-      <h1>Logged in as </h1>
+      <h4>Spotify Playground App</h4>
     </div>
   );
 }

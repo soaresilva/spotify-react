@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./components/Header";
 import NowPlaying from "./components/NowPlaying";
 import RecentlyPlayed from "./components/RecentlyPlayed";
+import TopTracks from "./components/TopTracks";
 
 import SpotifyWebApi from "spotify-web-api-js";
 
@@ -18,6 +19,7 @@ class App extends Component {
     }
     this.state = {
       loggedIn: token ? true : false,
+      user: "",
     };
   }
 
@@ -34,16 +36,33 @@ class App extends Component {
     return hashParams;
   }
 
+  componentDidMount() {
+    spotifyApi.getGeneric("https://api.spotify.com/v1/me").then((response) => {
+      console.log("getGeneric", response);
+      this.setState({
+        user: response,
+      });
+    });
+  }
+
   render() {
     return (
       <>
         <Header loggedIn={this.state.loggedIn} />
         <div className="App">
-          <a href="http://localhost:8888">
-            <button>Login with Spotify</button>
-          </a>
+          {this.state.loggedIn ? (
+            <h3>Welcome {this.state.user.display_name}!</h3>
+          ) : (
+            <a href="http://localhost:8888">
+              <button>Login with Spotify</button>
+            </a>
+          )}
+
           <NowPlaying loggedIn={this.state.loggedIn} />
-          <RecentlyPlayed loggedIn={this.state.loggedIn} />
+          <div className="list-of-tracks container-flex">
+            <RecentlyPlayed />
+            <TopTracks />
+          </div>
         </div>
       </>
     );

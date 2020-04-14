@@ -41,3 +41,15 @@ div,
 button {
   margin: 15px;
 }
+
+.list-of-tracks {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.recent-tracks,
+.top-tracks {
+  border: 1px solid black;
+  padding: 1rem;
+}
