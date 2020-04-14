@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import NowPlaying from "./components/NowPlaying";
+import BolachasNowPlaying from "./components/BolachasNowPlaying";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import TopTracks from "./components/TopTracks";
 
@@ -63,6 +64,7 @@ class App extends Component {
             <RecentlyPlayed />
             <TopTracks />
           </div>
+          <BolachasNowPlaying />
         </div>
       </>
     );
