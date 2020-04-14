@@ -9,7 +9,7 @@ class NowPlaying extends Component {
     this.state = {
       loggedIn: this.props.loggedIn,
       nowPlaying: {
-        name: "Not Checked",
+        name: "Click below!",
         artist: "",
         albumArt: "",
         trackUrl: "",
@@ -20,14 +20,24 @@ class NowPlaying extends Component {
   getNowPlaying() {
     spotifyApi.getMyCurrentPlayingTrack().then((response) => {
       console.log("now playing", response);
-      this.setState({
-        nowPlaying: {
-          name: response.item.name,
-          artist: response.item.artists[0].name,
-          albumArt: response.item.album.images[0].url,
-          trackUrl: response.item.external_urls.spotify,
-        },
-      });
+      if (!response) {
+        this.setState({
+          nowPlaying: {
+            name: "You are not streaming a track!",
+            artist: "Go play something and then hit the button below.",
+            albumArt: "",
+            trackUrl: "",
+          },
+        });
+      } else
+        this.setState({
+          nowPlaying: {
+            name: response.item.name,
+            artist: response.item.artists[0].name,
+            albumArt: response.item.album.images[0].url,
+            trackUrl: response.item.external_urls.spotify,
+          },
+        });
     });
   }
 
@@ -49,7 +59,7 @@ class NowPlaying extends Component {
           {this.state.nowPlaying.albumArt === "" ? null : (
             <img
               src={this.state.nowPlaying.albumArt}
-              style={{ height: 300 }}
+              style={{ height: 250 }}
               alt={`${this.state.nowPlaying.name} album cover`}
             />
           )}

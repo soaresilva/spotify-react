@@ -32,7 +32,16 @@ class RecentlyPlayed extends Component {
           {this.state.recentTracks.map((track, index) => (
             <p key={index}>
               <strong>{track.track.artists[0].name}</strong>,{" "}
-              <i>{track.track.name}</i> (at {track.played_at.slice(11, 16)})
+              <i>
+                <a
+                  href={track.track.external_urls.spotify}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {track.track.name}
+                </a>
+              </i>{" "}
+              (at {track.played_at.slice(11, 16)})
             </p>
           ))}
         </div>

@@ -29,7 +29,16 @@ class TopTracks extends Component {
           {this.state.topTracks.map((track, index) => (
             <p key={index}>
               {index + 1}. <strong>{track.artists[0].name}</strong>,{" "}
-              <i>{track.name}</i>
+              <i>
+                <a
+                  href={track.external_urls.spotify}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {track.name}
+                </a>{" "}
+                {track.artists[1] ? `(feat. ${track.artists[1].name})` : ""}
+              </i>
             </p>
           ))}
         </div>
