@@ -28,3 +28,4 @@ Playing around with Spotify's API using React. I have used <a href="https://gith
 - Click 'Log in with Spotify' and log in
 - Click the 'Check what's playing' button
 - You should see info about your track
+- Additionally, you'll have access to your top tracks and last 20 played tracks
