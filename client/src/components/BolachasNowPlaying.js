@@ -11,7 +11,7 @@ class BolachasNowPlaying extends Component {
     };
   }
   // Change function to componentDidMount() if I want them to display without clicking the button
-  componentDidMount() {
+  getBNP() {
     spotifyApi.getPlaylistTracks("6yoVgSpIgriempnYrj7MgA").then((response) => {
       console.log("BNP", response.items);
       this.setState({
@@ -24,7 +24,19 @@ class BolachasNowPlaying extends Component {
     return (
       <>
         <div className="bnp">
-          <h4>Next Week's Bolachas Now Playing Tracks Are...</h4>
+          <h4>
+            Next week's{" "}
+            <a
+              href="http://bit.ly/bolachasnowplaying"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bolachas Now Playing
+            </a>{" "}
+            tracks are...{" "}
+            {<button onClick={() => this.getBNP()}>Get tracks</button>}
+          </h4>
+
           {this.state.playlistTracks.map((track, index) => (
             <p key={index} className="bnp-tracks">
               {track.track.artists[0].name} - {track.track.name}{" "}
@@ -33,6 +45,8 @@ class BolachasNowPlaying extends Component {
                 : ""}
             </p>
           ))}
+          {/* TODO: Calculate the total running time of the playlist (getting the duration_ms of all tracks, add it up, convert to hh:mm:ss) */}
+          {/* <p>Total running time: {this.state.playlistTracks.duration_ms}</p> */}
         </div>
       </>
     );

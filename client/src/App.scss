@@ -1,3 +1,45 @@
+@import "react-toggle.css";
+
+// colors
+$spotify-green: #1db954;
+$spotify-black: #191414;
+
+body.light-mode {
+  background-color: white;
+  color: $spotify-black;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: $spotify-black;
+  color: white;
+  a {
+    color: $spotify-green;
+  }
+  .recent-tracks,
+  .top-tracks {
+    border: 1px solid $spotify-green;
+    padding: 1rem;
+  }
+}
+
+.Header {
+  display: flex;
+  margin: auto;
+
+  .title {
+    justify-content: flex-start;
+  }
+  .dark-mode-toggler {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    height: 1rem;
+    width: 20%;
+    margin-left: auto;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -50,9 +92,10 @@ button {
 
 .recent-tracks,
 .top-tracks {
-  border: 1px solid black;
+  border: 1px solid;
   padding: 1rem;
 }
+
 .bnp {
   text-align: left;
 }

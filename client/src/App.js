@@ -5,6 +5,7 @@ import NowPlaying from "./components/NowPlaying";
 import BolachasNowPlaying from "./components/BolachasNowPlaying";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import TopTracks from "./components/TopTracks";
+// import Lyrics from "./components/Lyrics";
 
 import SpotifyWebApi from "spotify-web-api-js";
 
@@ -49,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header loggedIn={this.state.loggedIn} />
+        <Header />
         <div className="App">
           {this.state.loggedIn ? (
             <h3>Welcome {this.state.user.display_name}!</h3>
@@ -58,8 +59,8 @@ class App extends Component {
               <button>Login with Spotify</button>
             </a>
           )}
-
           <NowPlaying loggedIn={this.state.loggedIn} />
+          {/* <Lyrics /> */}
           <div className="list-of-tracks container-flex">
             <RecentlyPlayed />
             <TopTracks />

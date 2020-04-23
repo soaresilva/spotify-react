@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
-import { DateTime } from "luxon";
+// import { DateTime } from "luxon";
+// TODO: use luxon to convert played track timestamp to local timezone (currently UTC)
 
 const spotifyApi = new SpotifyWebApi();
 

@@ -5,13 +5,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import { SpotifyApiContext } from "react-spotify-api";
-
 ReactDOM.render(
   <React.StrictMode>
-    {/* <SpotifyApiContext.Provider value={token}> */}
     <App />
-    {/* </SpotifyApiContext.Provider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

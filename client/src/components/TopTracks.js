@@ -10,7 +10,7 @@ class TopTracks extends Component {
       topTracks: [],
     };
   }
-  // Change function to componentDidMount() if I want them to display without clicking the button
+  // Change function to componentDidMount() if I want them to display without clicking the button / to getTopTracks if I want them to display on button click
   componentDidMount() {
     spotifyApi.getMyTopTracks().then((response) => {
       console.log("top tracks", response.items);
