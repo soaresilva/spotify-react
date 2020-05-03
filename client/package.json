@@ -10,7 +10,7 @@
     "cors": "^2.8.5",
     "genius-lyrics-api": "^2.0.3",
     "luxon": "^1.23.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

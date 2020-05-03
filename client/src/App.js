@@ -5,6 +5,7 @@ import NowPlaying from "./components/NowPlaying";
 import BolachasNowPlaying from "./components/BolachasNowPlaying";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import TopTracks from "./components/TopTracks";
+import TopArtists from "./components/TopArtists";
 // import Lyrics from "./components/Lyrics";
 
 import SpotifyWebApi from "spotify-web-api-js";
@@ -64,6 +65,7 @@ class App extends Component {
           <div className="list-of-tracks container-flex">
             <RecentlyPlayed />
             <TopTracks />
+            <TopArtists />
           </div>
           <BolachasNowPlaying />
         </div>

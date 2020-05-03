@@ -28,7 +28,7 @@ class RecentlyPlayed extends Component {
         {/* <button onClick={() => this.getRecentlyPlayedTracks()}>
           Check recently played tracks
         </button> */}
-        <div className="recent-tracks col-6">
+        <div className="recent-tracks col-4">
           <h4>Recently Played Tracks</h4>
           {this.state.recentTracks.map((track, index) => (
             <p key={index}>

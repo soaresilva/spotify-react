@@ -24,7 +24,7 @@ class TopTracks extends Component {
     return (
       <>
         {/* <button onClick={() => this.getTopTracks()}>Check top tracks</button> */}
-        <div className="top-tracks col-6">
+        <div className="top-tracks col-4">
           <h4>User's Top Tracks</h4>
           {this.state.topTracks.map((track, index) => (
             <p key={index}>
